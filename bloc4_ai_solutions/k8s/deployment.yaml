@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auroratech-mlops-api
+  labels:
+    app: auroratech-ml-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auroratech-ml-api
+  template:
+    metadata:
+      labels:
+        app: auroratech-ml-api
+    spec:
+      containers:
+      - name: api
+        image: auroratech/margin-predictor:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENV
+          value: "production"
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auroratech-mlops-api-svc
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8000
+  selector:
+    app: auroratech-ml-api

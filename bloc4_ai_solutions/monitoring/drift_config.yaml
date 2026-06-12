@@ -1,0 +1,11 @@
+drift_detection:
+  features:
+    - eur_to_usd
+    - eur_to_twd
+    - component_delay_days
+    - freight_cost_eur
+  metrics:
+    - ks_stat
+    - wasserstein_distance
+  threshold: 0.05
+  action: trigger_retrain

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Data Governance Plan - Aurora Tech</title>
+<style>
+  body { font-family: 'Times New Roman', Times, serif; background: #e2e8f0; color: #1e293b; padding: 40px; display: flex; justify-content: center; }
+  .document { background: white; padding: 80px; max-width: 800px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); line-height: 1.6; }
+  h1 { text-align: center; border-bottom: 2px solid #334155; padding-bottom: 20px; text-transform: uppercase; }
+  h2 { color: #334155; margin-top: 40px; }
+  h3 { color: #475569; }
+  p { text-align: justify; }
+  .cover { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 1px solid #ccc; margin-bottom: 40px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+  th { background: #f1f5f9; }
+</style>
+</head>
+<body>
+  <div class="document">
+    <div class="cover">
+        <h1>Comprehensive Data Governance Policy</h1>
+        <h2>Aurora Tech Logistics & Margins</h2>
+        <p><strong>Deliverable:</strong> Bloc 1 - Data Governance</p>
+        <p><strong>Date:</strong> 2026-06-02</p>
+        <p>Confidential Document</p>
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>This document outlines the official Data Governance framework for Aurora Tech. As our business relies on predicting margin compression using real-time FX rates and logistics tracking, data integrity is our most valuable asset. This policy dictates how data is acquired, transformed, stored, and protected.</p>
+
+    <h2>2. Stakeholders and Roles</h2>
+    <table>
+        <tr><th>Role</th><th>Responsibility</th><th>Assigned To</th></tr>
+        <tr><td><strong>Chief Data Officer</strong></td><td>Overall strategic accountability.</td><td>Executive Board</td></tr>
+        <tr><td><strong>Data Owner</strong></td><td>Defines access controls and classifications.</td><td>IT Infrastructure Lead</td></tr>
+        <tr><td><strong>Data Steward</strong></td><td>Ensures day-to-day data quality and metadata mapping.</td><td>Financial Data Analyst</td></tr>
+    </table>
+
+    <h2>3. Regulatory Compliance & GDPR</h2>
+    <p>The system complies strictly with GDPR frameworks:</p>
+    <ul>
+        <li><strong>Data Minimization:</strong> The pipeline exclusively extracts logistics durations and financial identifiers. Personally Identifiable Information (PII) of drivers or customs agents is stripped at the source.</li>
+        <li><strong>Encryption:</strong> All Data Warehouse instances (PostgreSQL) are encrypted at rest using AES-256.</li>
+    </ul>
+
+    <h2>4. Data Quality Standards</h2>
+    <p>Data fed into the Machine Learning Engine (Bloc 4) must meet a 99.9% completeness threshold. In cases where the Frankfurter EUR/USD API is unreachable, the system will apply an automated failover using a 7-day moving average. This is detailed in the Airflow ETL procedures (Bloc 3).</p>
+
+    <h2>5. Security & Risk Assessment</h2>
+    <p>Risk matrix indicating key threats to the pipeline:</p>
+    <ul>
+        <li><strong>Threat 1: Data Poisoning.</strong> Unauthorized alteration of vendor pricing to skew the ML model. <em>Control: Implement strict RBAC via active directory, limiting write access to authorized service accounts only.</em></li>
+        <li><strong>Threat 2: Infrastructure Outage.</strong> <em>Control: Multi-region container deployments with automated failover logic.</em></li>
+    </ul>
+
+    <h2>6. Next Steps & Auditing</h2>
+    <p>This policy will be audited annually. Compliance artifacts, including Airflow execution logs and PostgreSQL connection logs, will be retained for 5 years.</p>
+  </div>
+</body>
+</html>

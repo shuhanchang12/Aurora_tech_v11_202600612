@@ -1,0 +1,23 @@
+This document provides the outline for the Bloc 2 Infrastructure Demo Video.
+
+Video Title: AuroraTech Data Architecture - Infrastructure & IaC
+Length: 3 minutes
+
+Script / Flow:
+1. Introduction (0:00 - 0:30)
+   - Explain the goal: Deploy a robust data warehouse supporting ML analytics.
+   - Show the Terraform `main.tf` code briefly.
+
+2. Infrastructure Execution (0:30 - 1:30)
+   - Open Terminal.
+   - Run `bash scripts/deploy.sh`
+   - Show Docker spinning up: `postgres:15`, `pgadmin4`, and `grafana`.
+
+3. Verification (1:30 - 2:30)
+   - Open `localhost:5050` (PgAdmin).
+   - Verify that the schema `dwh` and tables `fact_chromebook_margin_risk`, `dim_date`, `dim_chromebook_vendor` are successfully created via the `init.sql` script.
+   
+4. Monitoring & Conclusion (2:30 - 3:00)
+   - Open `localhost:3000` (Grafana).
+   - Display a basic connection to the PostgreSQL source.
+   - End video.

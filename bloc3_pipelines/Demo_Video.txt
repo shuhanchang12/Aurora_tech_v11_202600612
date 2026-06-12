@@ -1,0 +1,21 @@
+This document outlines the demo process for the Real-time Data Pipelines.
+
+Video Title: AuroraTech ETL Pipeline Operations
+Length: 3-5 minutes
+
+Script / Flow:
+1. Architecture Overview (0:00 - 0:45)
+   - Explain the data sources and Airflow DAG setup.
+
+2. Pipeline Triggering (0:45 - 2:00)
+   - Open Airflow Web UI.
+   - Manually trigger `auroratech_realtime_pipeline`.
+   - Show tasks transitioning: `extract_currency_rates` -> `extract_shipping_logistics` -> `transform_and_load`.
+
+3. Transformation Logic Proof (2:00 - 3:00)
+   - View XCom push details showing component_delay_days and freight costs.
+   - View Logs on `transform_and_load` task to show Ocean-to-Air logic trigger.
+
+4. Destination Validation (3:00 - End)
+   - Connect to Postgres.
+   - `SELECT * FROM dwh.fact_chromebook_margin_risk ORDER BY created_at DESC LIMIT 5;` to prove data insertion.

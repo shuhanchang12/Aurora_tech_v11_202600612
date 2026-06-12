@@ -1,0 +1,23 @@
+This document outlines the Bloc 4 end-to-end MLOps presentation demo.
+
+Video Title: End-to-End MLOps Defense Presentation
+Length: 5 minutes
+
+Script / Flow:
+1. Serving API & Inference (0:00 - 1:30)
+   - Run the API locally: `uvicorn src.app:app --port 8000`.
+   - Use `curl` or Postman to send a POST request with FX rates and Delay Days.
+   - Show the JSON response containing the prediction probability and binary risk assessment.
+
+2. Concept Drift Detection (1:30 - 3:00)
+   - Execute `python monitoring/monitor.py`.
+   - Demonstrate the script identifying a data drift using the Kolmogorov-Smirnov test against baseline distributions.
+   - Show the alert: "Drift threshold exceeded (> 0.05)."
+
+3. CI/CD & Automated Retraining (3:00 - 4:30)
+   - Show that the drift alert triggers `python retrain/run_retrain.py`.
+   - Display the retraining log: fetching new warehouse data, executing Random Forest, reporting improved F1-score, and overwriting the `.pkl` artifact.
+
+4. Conclusion (4:30 - 5:00)
+   - Confirm the new model is auto-loaded by FastAPI.
+   - Final successful prediction check to close the loop.
