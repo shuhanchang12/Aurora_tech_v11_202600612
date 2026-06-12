@@ -14,7 +14,7 @@ const Bloc4AISolutions = () => {
   const tabs = [
       { id: 'mlops', label: 'MLOps Repository (GitHub)', icon: <FileCode className="w-4 h-4" /> },
       { id: 'slides', label: 'Executive Deck', icon: <Presentation className="w-4 h-4" /> },
-      { id: 'interactive', label: '互動系統展示 (Interactive Demo)', icon: <BrainCircuit className="w-4 h-4" /> },
+      { id: 'interactive', label: 'Interactive Demo', icon: <BrainCircuit className="w-4 h-4" /> },
   ];
 
   return (

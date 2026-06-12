@@ -15,7 +15,7 @@ const Bloc2Architecture = () => {
   const tabs = [
       { id: 'iac', label: 'IaC Repository (GitHub)', icon: <FileCode className="w-4 h-4" /> },
       { id: 'slides', label: 'Infrastructure Plan', icon: <Presentation className="w-4 h-4" /> },
-      { id: 'interactive', label: '互動系統展示 (Interactive Demo)', icon: <Database className="w-4 h-4" /> },
+      { id: 'interactive', label: 'Interactive Demo', icon: <Database className="w-4 h-4" /> },
   ];
 
   return (

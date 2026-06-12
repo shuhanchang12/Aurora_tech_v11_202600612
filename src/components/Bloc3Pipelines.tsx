@@ -14,7 +14,7 @@ const Bloc3Pipelines = () => {
   const tabs = [
       { id: 'code', label: 'Pipeline Repository (GitHub)', icon: <FileCode className="w-4 h-4" /> },
       { id: 'slides', label: 'Pipeline Plan (Slides)', icon: <Presentation className="w-4 h-4" /> },
-      { id: 'interactive', label: '互動系統展示 (Interactive Demo)', icon: <PlaySquare className="w-4 h-4" /> },
+      { id: 'interactive', label: 'Interactive Demo', icon: <PlaySquare className="w-4 h-4" /> },
   ];
 
   return (
